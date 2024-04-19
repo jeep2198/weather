@@ -16,9 +16,12 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - name: Grant execute permission to start.sh
         run: chmod +x start.sh
+      - name: Get short commit hash
+        id: git_info
+        run: echo "::set-output name=short_hash::$(git rev-parse --short HEAD)"
 
       - name: Build and push Docker image
-        run: ./start.sh
+        run: ./start.sh ${{ steps.git_info.outputs.short_hash }}
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
