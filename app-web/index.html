@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>
+        <i class="fas fa-temperature-high" style="color: red;"></i>
+        Temperatura de las Ciudades
+        <i class="fas fa-temperature-low" style="color: blue;"></i>
+    </h1>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        
+        <form id="city-form">
+            <label for="cities">Selecciona ciudades:</label>
+            <select id="cities" multiple>
+                <option value="Cucuta">Cucuta</option>
+                <option value="Cali">Cali</option>
+                <option value="Bogota">Bogota</option>
+                <option value="Medellin">Medellin</option>
+                <option value="Pereira">Pereira</option>
+                <option value="Popayan">Popayan</option>
+                <option value="barrancabermeja">barrancabermeja</option>
+                <option value="puerto santander">puerto santander</option>
+                <!-- Agrega más ciudades según necesites -->
+            </select>
+            <div><button type="submit">Obtener Temperatura</button>
+            </div>
+            
+        </form>
+        <div class="chart-container">
+            <canvas id="temperature-chart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
