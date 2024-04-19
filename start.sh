@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Variables
-DOCKER_USERNAME="jeep2198"
-DOCKER_PASSWORD="clave2198"
+# DOCKER_USERNAME=$DOCKER_USERNAME
+# DOCKER_PASSWORD=$DOCKER_PASSWORD
+
 DOCKER_REPO="prueba-weather-app"
 
 # Construir la imagen Docker
