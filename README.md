@@ -12,3 +12,7 @@ Para un clúster de Kubernetes se deben hacer algunos preparativos ya que el pro
 el primer paso es definir la imagen en el archivo deploy/deploy.yaml luego se deben ejecutar los comandos kubectl apply -f deploy/deploy.yaml, kubectl apply -f deploy/service.yaml y kubectl apply -f deploy/ingress.yaml en tu terminal. y creara los tres recursos en el namespace default.
 
 Si se desea implementar un escalado horizontal se debe ejecutar el archivo deploy/ingress.yaml de este modo kubectl apply -f deploy/hpa.yaml 
+
+
+#directorio docker hub
+https://hub.docker.com/repository/docker/jeep2198/prueba-weather-app/general
