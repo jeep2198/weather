@@ -16,3 +16,5 @@ Si se desea implementar un escalado horizontal se debe ejecutar el archivo deplo
 
 #directorio docker hub
 https://hub.docker.com/repository/docker/jeep2198/prueba-weather-app/general
+
+docker pull jeep2198/prueba-weather-app:latest
