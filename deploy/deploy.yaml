@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-web
+  template:
+    metadata:
+      labels:
+        app: app-web
+    spec:
+      containers:
+        - name: app-web
+          image: tu_usuario_dockerhub/tu_repositorio:latest
+          ports:
+            - containerPort: 80

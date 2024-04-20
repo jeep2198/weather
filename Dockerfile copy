@@ -1,0 +1,23 @@
+# Usa una imagen de Node.js como base
+FROM node:8.9 as builder
+
+# Establece el directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copia los archivos de tu aplicación Angular al contenedor
+COPY WeatherForecast .
+
+# Instala las dependencias y construye la aplicación
+RUN npm install
+RUN npm run build 
+# Etapa de producción: Usa una imagen de Nginx para servir la aplicación compilada
+FROM nginx:1.19.0-alpine
+
+# Copia los archivos compilados de la etapa anterior al directorio de Nginx
+COPY --from=builder /app/dist/* /usr/share/nginx/html/
+
+# Exponer el puerto 80 para que la aplicación sea accesible desde fuera del contenedor
+EXPOSE 80
+
+# Comando para iniciar el servidor Nginx
+CMD ["nginx", "-g", "daemon off;"]
