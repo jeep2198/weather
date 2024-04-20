@@ -15,6 +15,6 @@ echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-st
 # Subir la imagen al registro público de Docker Hub
 docker tag $DOCKER_REPO:$1 $DOCKER_USERNAME/$DOCKER_REPO:$1
 docker push $DOCKER_USERNAME/$DOCKER_REPO:$1
-docker push $DOCKER_USERNAME/$DOCKER_REPO:latest
+docker push $DOCKER_USERNAME/$DOCKER_REPO
 
 
